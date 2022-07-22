@@ -13,6 +13,7 @@ import coding.northwind.business.abstracts.ProductService;
 import coding.northwind.core.utilities.results.DataResult;
 import coding.northwind.core.utilities.results.Result;
 import coding.northwind.entities.concretes.Product;
+import coding.northwind.entities.dtos.ProductWithCategoryDto;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -30,6 +31,10 @@ public class ProductsController {
 	@GetMapping("/getall")
 	public DataResult<List<Product>> getAll(){
 		return this.productService.getAll();
+	}
+	@GetMapping("/getProductWithCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+		return this.productService.getProductWithCategoryDetails();
 	}
 	
 	@PostMapping("/add")

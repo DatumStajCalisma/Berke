@@ -6,6 +6,7 @@ import java.util.List;
 import coding.northwind.core.utilities.results.DataResult;
 import coding.northwind.core.utilities.results.Result;
 import coding.northwind.entities.concretes.Product;
+import coding.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 	
@@ -28,5 +29,7 @@ public interface ProductService {
 	DataResult<List<Product>> getByProductNameStartsWith(String productName);
 	
 	DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
 }
